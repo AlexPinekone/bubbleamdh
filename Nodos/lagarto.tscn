@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://svyqmxsch53v"]
+
+[ext_resource type="Texture2D" uid="uid://dqdiujasljiqq" path="res://SpritesLagarto/Bubby Run/0.png" id="1_8egmo"]
+[ext_resource type="Texture2D" uid="uid://b4arrdtp0x5wq" path="res://SpritesLagarto/Bubby Run/1.png" id="2_gwbbl"]
+[ext_resource type="Texture2D" uid="uid://btwu1wogkb8ai" path="res://SpritesLagarto/Bubby Run/2.png" id="3_dqii4"]
+[ext_resource type="Texture2D" uid="uid://batrxc66vvmeb" path="res://SpritesLagarto/Bubby Run/3.png" id="4_kb6rc"]
+[ext_resource type="Texture2D" uid="uid://daw1h56vknrrk" path="res://SpritesLagarto/Bubby Run/4.png" id="5_plsm4"]
+
+[sub_resource type="GDScript" id="GDScript_5mw32"]
+script/source = "extends CharacterBody2D
+
+var bubble = preload(\"res://Nodos/bubble.tscn\")
+
+var speed = 80
+var gravity = 20
+var jump = -320
+
+var bubble_speed = 3
+
+var a = 0
+
+func _ready():
+	a = 1
+
+func _physics_process(delta):
+	if Input.is_action_pressed(\"right\"):
+		velocity.x = speed
+		$AnimatedSprite.set_animation(\"run\")
+		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play(\"run\")
+	elif Input.is_action_pressed(\"left\"):
+		velocity.x = -speed
+		$AnimatedSprite.set_animation(\"run\")
+		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.play(\"run\")
+	else:
+		velocity.x = 0
+	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
+		velocity.y = jump
+	if Input.is_action_just_pressed(\"blow\"):
+		blow()
+	if !is_on_floor():
+		velocity.y += gravity
+	move_and_slide()
+
+func blow():
+	#$AnimatedSprite.play(\"blow\")
+	var bubble_ins = bubble.instantiate()
+	if $AnimatedSprite.flip_h == true:
+		bubble_ins.speed = bubble_speed
+	else:
+		bubble_ins.speed = -bubble_speed
+	bubble_ins.position = position
+	get_parent().add_child(bubble_ins)
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2vft7"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8egmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gwbbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dqii4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kb6rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_plsm4")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1s31"]
+size = Vector2(16, 16)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = SubResource("GDScript_5mw32")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2vft7")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k1s31")

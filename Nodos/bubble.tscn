@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://badnrydojlh08"]
+
+[ext_resource type="Texture2D" uid="uid://kjirw5nwhh2f" path="res://SpritesLagarto/Bubble.png" id="1_06ds6"]
+
+[sub_resource type="GDScript" id="GDScript_nugig"]
+script/source = "extends Area2D
+
+var speed: float
+
+func _physics_process(delta):
+	position.x += speed
+	
+func _on_body_entered(body: Node2D) -> void:
+	get_parent().call(\"check_win\")
+	body.queue_free()
+	queue_free()
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7eyrr"]
+radius = 8.0
+
+[node name="bubble" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = SubResource("GDScript_nugig")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_06ds6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7eyrr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
