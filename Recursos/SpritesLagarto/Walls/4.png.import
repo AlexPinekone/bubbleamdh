@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d203gh6gjnyty"
-path="res://.godot/imported/1.png-2652e0698cf461800462dd1a6da58130.ctex"
+uid="uid://bf40ypjhd5g0b"
+path="res://.godot/imported/4.png-540ec9b516109796ff08dbca34dfa637.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpritesLagarto/Bubby Blow/1.png"
-dest_files=["res://.godot/imported/1.png-2652e0698cf461800462dd1a6da58130.ctex"]
+source_file="res://Recursos/SpritesLagarto/Walls/4.png"
+dest_files=["res://.godot/imported/4.png-540ec9b516109796ff08dbca34dfa637.ctex"]
 
 [params]
 

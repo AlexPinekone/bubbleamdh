@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2o0wejyc18t0"
-path="res://.godot/imported/4.png-9087e907726807161730a97b7411cea1.ctex"
+uid="uid://kjirw5nwhh2f"
+path="res://.godot/imported/Bubble.png-74b80404aaf3438c5202553bb60b9687.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpritesLagarto/Bubby Blow/4.png"
-dest_files=["res://.godot/imported/4.png-9087e907726807161730a97b7411cea1.ctex"]
+source_file="res://Recursos/SpritesLagarto/Bubble.png"
+dest_files=["res://.godot/imported/Bubble.png-74b80404aaf3438c5202553bb60b9687.ctex"]
 
 [params]
 

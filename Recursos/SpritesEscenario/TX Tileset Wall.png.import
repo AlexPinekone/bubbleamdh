@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf40ypjhd5g0b"
-path="res://.godot/imported/4.png-5cf0b4615d1e00633958c1fc8ed15d37.ctex"
+uid="uid://b0pohbbgvite8"
+path="res://.godot/imported/TX Tileset Wall.png-1a91e3da3088dd425fd0b6faba67c10b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpritesLagarto/Walls/4.png"
-dest_files=["res://.godot/imported/4.png-5cf0b4615d1e00633958c1fc8ed15d37.ctex"]
+source_file="res://Recursos/SpritesEscenario/TX Tileset Wall.png"
+dest_files=["res://.godot/imported/TX Tileset Wall.png-1a91e3da3088dd425fd0b6faba67c10b.ctex"]
 
 [params]
 

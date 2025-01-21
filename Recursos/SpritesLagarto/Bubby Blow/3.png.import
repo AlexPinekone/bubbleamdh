@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4agsnw8n5o4k"
-path="res://.godot/imported/1.png-71d3c81a2f2d44409a2cf3024a3a88d8.ctex"
+uid="uid://c8mpm43a33n5b"
+path="res://.godot/imported/3.png-b4979ab0b6dbd8a48c5ecb8ae98796ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpritesLagarto/Walls/1.png"
-dest_files=["res://.godot/imported/1.png-71d3c81a2f2d44409a2cf3024a3a88d8.ctex"]
+source_file="res://Recursos/SpritesLagarto/Bubby Blow/3.png"
+dest_files=["res://.godot/imported/3.png-b4979ab0b6dbd8a48c5ecb8ae98796ae.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

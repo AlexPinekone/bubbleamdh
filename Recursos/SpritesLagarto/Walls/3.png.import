@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4arrdtp0x5wq"
-path="res://.godot/imported/1.png-f58be988285659f81245f2b2754fa82a.ctex"
+uid="uid://bilbjqmoov2pt"
+path="res://.godot/imported/3.png-42f0694b3c46986c3a4e2f7b5e48086e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpritesLagarto/Bubby Run/1.png"
-dest_files=["res://.godot/imported/1.png-f58be988285659f81245f2b2754fa82a.ctex"]
+source_file="res://Recursos/SpritesLagarto/Walls/3.png"
+dest_files=["res://.godot/imported/3.png-42f0694b3c46986c3a4e2f7b5e48086e.ctex"]
 
 [params]
 

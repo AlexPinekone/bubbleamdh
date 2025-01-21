@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://svyqmxsch53v"]
 
-[ext_resource type="Texture2D" uid="uid://dqdiujasljiqq" path="res://SpritesLagarto/Bubby Run/0.png" id="1_8egmo"]
-[ext_resource type="Texture2D" uid="uid://b4arrdtp0x5wq" path="res://SpritesLagarto/Bubby Run/1.png" id="2_gwbbl"]
-[ext_resource type="Texture2D" uid="uid://btwu1wogkb8ai" path="res://SpritesLagarto/Bubby Run/2.png" id="3_dqii4"]
-[ext_resource type="Texture2D" uid="uid://batrxc66vvmeb" path="res://SpritesLagarto/Bubby Run/3.png" id="4_kb6rc"]
-[ext_resource type="Texture2D" uid="uid://daw1h56vknrrk" path="res://SpritesLagarto/Bubby Run/4.png" id="5_plsm4"]
+[ext_resource type="Texture2D" uid="uid://dqdiujasljiqq" path="res://Recursos/SpritesLagarto/Bubby Run/0.png" id="1_8egmo"]
+[ext_resource type="Texture2D" uid="uid://b4arrdtp0x5wq" path="res://Recursos/SpritesLagarto/Bubby Run/1.png" id="2_gwbbl"]
+[ext_resource type="Texture2D" uid="uid://btwu1wogkb8ai" path="res://Recursos/SpritesLagarto/Bubby Run/2.png" id="3_dqii4"]
+[ext_resource type="Texture2D" uid="uid://batrxc66vvmeb" path="res://Recursos/SpritesLagarto/Bubby Run/3.png" id="4_kb6rc"]
+[ext_resource type="Texture2D" uid="uid://daw1h56vknrrk" path="res://Recursos/SpritesLagarto/Bubby Run/4.png" id="5_plsm4"]
 
 [sub_resource type="GDScript" id="GDScript_5mw32"]
 script/source = "extends CharacterBody2D

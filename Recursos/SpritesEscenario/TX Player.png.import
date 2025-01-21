@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqudsjf6fyfub"
-path="res://.godot/imported/2.png-f23a98edb5301312dac12ebf57dac0a1.ctex"
+uid="uid://dlyllmsak2s1j"
+path="res://.godot/imported/TX Player.png-89ca4f720930fae83d65170e5943f4de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpritesLagarto/Bubby Blow/2.png"
-dest_files=["res://.godot/imported/2.png-f23a98edb5301312dac12ebf57dac0a1.ctex"]
+source_file="res://Recursos/SpritesEscenario/TX Player.png"
+dest_files=["res://.godot/imported/TX Player.png-89ca4f720930fae83d65170e5943f4de.ctex"]
 
 [params]
 

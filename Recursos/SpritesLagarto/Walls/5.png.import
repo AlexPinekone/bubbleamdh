@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bilbjqmoov2pt"
-path="res://.godot/imported/3.png-8bf9dbaede13d0e186f6cb39a95b3163.ctex"
+uid="uid://bauflx8b3lmac"
+path="res://.godot/imported/5.png-2536bb0e50fd1d24801131e5dab608f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpritesLagarto/Walls/3.png"
-dest_files=["res://.godot/imported/3.png-8bf9dbaede13d0e186f6cb39a95b3163.ctex"]
+source_file="res://Recursos/SpritesLagarto/Walls/5.png"
+dest_files=["res://.godot/imported/5.png-2536bb0e50fd1d24801131e5dab608f4.ctex"]
 
 [params]
 

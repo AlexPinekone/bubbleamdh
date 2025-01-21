@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://badnrydojlh08"]
 
-[ext_resource type="Texture2D" uid="uid://kjirw5nwhh2f" path="res://SpritesLagarto/Bubble.png" id="1_06ds6"]
+[ext_resource type="Texture2D" uid="uid://kjirw5nwhh2f" path="res://Recursos/SpritesLagarto/Bubble.png" id="1_06ds6"]
 
 [sub_resource type="GDScript" id="GDScript_nugig"]
 script/source = "extends Area2D
