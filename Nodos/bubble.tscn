@@ -5,10 +5,18 @@
 [sub_resource type="GDScript" id="GDScript_nugig"]
 script/source = "extends Area2D
 
-var speed: float
+var speedX: float = 0
+var speedY: float = 0
+var time_on_air: float
+@onready var timer: Timer = $Timer
+
+func _ready() -> void:
+	timer.wait_time = time_on_air
 
 func _physics_process(delta):
-	position.x += speed
+	position.x += speedX
+	position.y += speedY
+	
 	
 func _on_body_entered(body: Node2D) -> void:
 	get_parent().call(\"check_win\")
