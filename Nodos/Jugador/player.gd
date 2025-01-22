@@ -15,7 +15,6 @@ func _physics_process(_delta):
 	velocity = input_direction * SPEED
 	
 	if Input.is_action_just_pressed("blow"):
-		print("A")
 		blow()
 	move_and_slide()
 	
