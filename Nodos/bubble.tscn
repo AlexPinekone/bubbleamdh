@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://kjirw5nwhh2f" path="res://Recursos/SpritesLagarto/Bubble.png" id="1_06ds6"]
 
 [sub_resource type="GDScript" id="GDScript_nugig"]
-script/source = "extends Area2D
+script/source = "extends RigidBody2D
 
 var speedX: float = 0
 var speedY: float = 0
@@ -14,12 +14,9 @@ func _ready() -> void:
 	timer.wait_time = time_on_air
 
 func _physics_process(delta):
-	#if position.x == 0:
-	position.y += speedY
-	#else:
-	position.x += speedX
-	
-	
+
+	global_position.y += speedY 
+	global_position.x += speedX 
 	
 #func _on_body_entered(body: Node2D) -> void:
 #	get_parent().call(\"check_win\")
@@ -29,14 +26,19 @@ func _physics_process(delta):
 
 func _on_timer_timeout() -> void:
 	queue_free()
+	
+func bubble():
+	pass
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7eyrr"]
 radius = 8.0
 
-[node name="bubble" type="Area2D"]
-collision_layer = 0
-collision_mask = 2
+[node name="bubble" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 4
+mass = 0.001
+gravity_scale = 0.0
 script = SubResource("GDScript_nugig")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

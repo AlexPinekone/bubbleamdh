@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 var bubble = preload("res://Nodos/bubble.tscn")
 
+var health = 100
+var player_alive = true
+var player_in_enemy = false
+var vulnerable = true
+
 const SPEED = 140
 var bubble_speed = 6
 var bubble_time = 0.5
@@ -21,6 +26,10 @@ func _physics_process(_delta):
 	set_animation("walk")
 	if velocity == Vector2.ZERO:
 		sprite.stop()
+		
+	enemy_attack();
+	if health <= 0:
+		player_alive = false
 	
 func set_animation(animation):
 	var direction = "Side" if sprite_direction in ["Left", "Right"] else sprite_direction
@@ -75,3 +84,25 @@ func blow():
 					get_parent().add_child(bubble_ins)
 		
 	
+
+
+func _on_player_hitbox_body_entered(body: Node2D) -> void:
+	if body.has_method("enemy"):
+		player_in_enemy = true
+
+func _on_player_hitbox_body_exited(body: Node2D) -> void:
+	if body.has_method("enemy"):
+		player_in_enemy = false
+
+func enemy_attack():
+	if vulnerable and player_in_enemy:
+		health -= 20
+		print(health)
+		vulnerable = false
+		$iframes.start()
+	
+func player():
+	pass
+
+func _on_iframes_timeout() -> void:
+	vulnerable = true
