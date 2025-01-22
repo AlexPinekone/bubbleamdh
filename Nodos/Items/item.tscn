@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cspq1cu4ki5jp"]
+
+[ext_resource type="Script" path="res://Nodos/Items/item.gd" id="1_52ls2"]
+[ext_resource type="Texture2D" uid="uid://yrjqa68huahs" path="res://Recursos/SpritesEscenario/bottle.png" id="2_8ak3x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2bw3"]
+radius = 14.0
+
+[node name="Item" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_52ls2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8ak3x")
+
+[node name="takeArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="takeArea"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_r2bw3")
+
+[connection signal="body_entered" from="takeArea" to="." method="_on_take_area_body_entered"]

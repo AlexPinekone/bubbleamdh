@@ -3,10 +3,12 @@ extends Node2D
 @onready var enemy = preload("res://Nodos/Personajes/enemy.tscn")
 
 func _ready() -> void:
-	generate_enemy()
+	pass
 
 func _on_timer_timeout() -> void:
-	generate_enemy()
+	if (Global.generated_enemy%10 != 0 || Global.generated_enemy == 0):
+		generate_enemy()
+		Global.generated_enemy += 1
 	
 func generate_enemy():
 	var rng = RandomNumberGenerator.new()

@@ -7,7 +7,7 @@ var player_alive = true
 var player_in_enemy = false
 var vulnerable = true
 
-const SPEED = 140
+var SPEED = 140
 var bubble_speed = 6
 var bubble_time = 0.5
 

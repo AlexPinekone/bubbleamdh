@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://csf5k0s5qn6ci" path="res://Recursos/SpritesEscenario/TX Tileset Grass.png" id="1_a24h2"]
 [ext_resource type="PackedScene" uid="uid://b8u2xifpvyg75" path="res://Nodos/Jugador/player.tscn" id="2_yc58d"]
 [ext_resource type="PackedScene" uid="uid://bccfwagnu46qj" path="res://Nodos/spawner.tscn" id="4_f1oi7"]
-[ext_resource type="Script" path="res://Scripts/item_handler.gd" id="5_fjwv1"]
+[ext_resource type="PackedScene" uid="uid://cspq1cu4ki5jp" path="res://Nodos/Items/item.tscn" id="5_j5b7t"]
 [ext_resource type="Script" path="res://Scripts/item_name.gd" id="6_62yvd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sworm"]
@@ -96,7 +96,7 @@ layer_0/tile_data = PackedInt32Array(327671, 1, 3, 327672, 1, 3, 327673, 327681,
 zoom = Vector2(2, 2)
 
 [node name="Player" parent="Base" instance=ExtResource("2_yc58d")]
-position = Vector2(0, -7)
+position = Vector2(-4, -7)
 
 [node name="TextEdit" type="TextEdit" parent="Base"]
 offset_left = -287.0
@@ -113,18 +113,16 @@ wait_time = 2.0
 autostart = true
 
 [node name="EnemyHandler" type="Node2D" parent="Spawn"]
-position = Vector2(0, -7)
 
 [node name="Spawner" parent="Spawn" instance=ExtResource("4_f1oi7")]
 position = Vector2(270, 3)
 
+[node name="Item" parent="." instance=ExtResource("5_j5b7t")]
+position = Vector2(-172, -7)
+
 [node name="Items" type="Node" parent="."]
 
-[node name="ItemHandler" type="Node" parent="Items"]
-script = ExtResource("5_fjwv1")
-
 [node name="ItemName" type="TextEdit" parent="Items"]
-visible = false
 offset_left = 143.0
 offset_top = -147.0
 offset_right = 267.0
@@ -137,4 +135,3 @@ script = ExtResource("6_62yvd")
 wait_time = 3.0
 
 [connection signal="timeout" from="Spawn/Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Items/timerItemName" to="Items/ItemName" method="_on_timer_item_name_timeout"]
