@@ -44,6 +44,6 @@ func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 		
 func deal_damage():
 	health -= 20
-	print("slime = ", health)
 	if health <= 0:
+		Global.points += 1
 		self.queue_free()
