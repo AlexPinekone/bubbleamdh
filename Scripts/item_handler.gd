@@ -3,7 +3,7 @@ extends Node
 var just_one = true
 
 func _process(delta: float) -> void:
-	if (Global.points % 10 == 0 and Global.points != 0 and just_one and Global.generated_enemy != 0):
+	if (Global.points % 10 == 0 and Global.points != 0 and just_one and Global.generated_enemy == Global.cantWave):
 		just_one = false
 		
 		var rng = RandomNumberGenerator.new()

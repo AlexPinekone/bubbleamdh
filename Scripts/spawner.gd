@@ -6,7 +6,7 @@ func _ready() -> void:
 	pass
 
 func _on_timer_timeout() -> void:
-	if (Global.generated_enemy%10 != 0 || Global.generated_enemy == 0):
+	if (Global.generated_enemy%Global.cantWave != 0 || Global.generated_enemy == 0):
 		generate_enemy()
 		Global.generated_enemy += 1
 	
