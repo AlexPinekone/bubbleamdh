@@ -43,7 +43,8 @@ func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 	pass
 		
 func deal_damage():
-	health -= 20
+	health -= player.damage
 	if health <= 0:
 		Global.points += 1
+		Global.pointsLevel += 1
 		self.queue_free()

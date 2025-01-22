@@ -6,18 +6,23 @@ var health = 100
 var player_alive = true
 var player_in_enemy = false
 var vulnerable = true
+var damage = 20
 
 var SPEED = 140
 var bubble_speed = 6
 var bubble_time = 0.5
 
+var cadencia = 0.5
+var attBlock = false
+
 var input_direction: get = _get_input_direction
 var sprite_direction= "Down": get = _get_sprite_direction
 
-@onready var sprite = $AnimatedSprite2D	
+@onready var sprite = $AnimatedSprite2D		
 
 func _physics_process(_delta):
 	velocity = input_direction * SPEED
+	$cooldown.wait_time = cadencia
 	
 	if Input.is_action_just_pressed("blow"):
 		blow()
@@ -56,32 +61,35 @@ func _get_sprite_direction():
 
 func blow():
 	#$AnimatedSprite.play("blow")
-	
-	var velocidadActualX = SPEED
-	var velocidadActualY = SPEED
-	var bubble_ins = bubble.instantiate()
-	bubble_ins.time_on_air = bubble_time
-	bubble_ins.position = position
-	
-	if velocity.x != SPEED || velocity.y != SPEED:
-		velocidadActualX = velocity.x
-		velocidadActualY = velocity.y
+	if attBlock == false:
+		attBlock = true
+		$cooldown.start()
 		
-	if sprite_direction == "Right":
-		bubble_ins.speedX = bubble_speed * ((velocity.x / velocidadActualX) if velocity.x != 0 || velocity.y !=0 else 1)
-		get_parent().add_child(bubble_ins)
-	else: 
-		if sprite_direction == "Left":
-			bubble_ins.speedX = -bubble_speed * ((velocity.x / velocidadActualX) if velocity.x != 0 || velocity.y !=0 else 1)
+		var velocidadActualX = SPEED
+		var velocidadActualY = SPEED
+		var bubble_ins = bubble.instantiate()
+		bubble_ins.time_on_air = bubble_time
+		bubble_ins.position = position
+		
+		if velocity.x != SPEED || velocity.y != SPEED:
+			velocidadActualX = velocity.x
+			velocidadActualY = velocity.y
+			
+		if sprite_direction == "Right":
+			bubble_ins.speedX = bubble_speed * ((velocity.x / velocidadActualX) if velocity.x != 0 || velocity.y !=0 else 1)
 			get_parent().add_child(bubble_ins)
 		else: 
-			if sprite_direction == "Down":
-				bubble_ins.speedY = bubble_speed * ((velocity.y / velocidadActualY) if velocity.x != 0 || velocity.y !=0 else 1)
+			if sprite_direction == "Left":
+				bubble_ins.speedX = -bubble_speed * ((velocity.x / velocidadActualX) if velocity.x != 0 || velocity.y !=0 else 1)
 				get_parent().add_child(bubble_ins)
-			else:
-				if sprite_direction == "Up":
-					bubble_ins.speedY = -bubble_speed * ((velocity.y / velocidadActualY) if velocity.x != 0 || velocity.y !=0 else 1)
+			else: 
+				if sprite_direction == "Down":
+					bubble_ins.speedY = bubble_speed * ((velocity.y / velocidadActualY) if velocity.x != 0 || velocity.y !=0 else 1)
 					get_parent().add_child(bubble_ins)
+				else:
+					if sprite_direction == "Up":
+						bubble_ins.speedY = -bubble_speed * ((velocity.y / velocidadActualY) if velocity.x != 0 || velocity.y !=0 else 1)
+						get_parent().add_child(bubble_ins)
 		
 	
 
@@ -106,3 +114,7 @@ func player():
 
 func _on_iframes_timeout() -> void:
 	vulnerable = true
+
+
+func _on_cooldown_timeout() -> void:
+	attBlock = false

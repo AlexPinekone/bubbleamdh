@@ -4,9 +4,11 @@ var player_current_attack = false
 
 var intermission = false
 
-var cantWave = 10
+var cantWave = 5
 
 var points = 0
+
+var pointsLevel = 0
 
 var generated_enemy = 0
 
