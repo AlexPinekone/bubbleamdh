@@ -15,6 +15,7 @@ func _physics_process(_delta):
 	velocity = input_direction * SPEED
 	
 	if Input.is_action_just_pressed("blow"):
+		print("A")
 		blow()
 	move_and_slide()
 	
@@ -48,17 +49,30 @@ func _get_sprite_direction():
 func blow():
 	#$AnimatedSprite.play("blow")
 	
+	var velocidadActualX = SPEED
+	var velocidadActualY = SPEED
 	var bubble_ins = bubble.instantiate()
-	if sprite_direction == "Right":
-		bubble_ins.speedX = bubble_speed * ((velocity.x / SPEED) if velocity.x != 0 || velocity.y !=0 else 1)
-	else:
-		bubble_ins.speedX = -bubble_speed * ((-velocity.x / SPEED) if velocity.x != 0 || velocity.y !=0 else 1)
-		
-	if sprite_direction == "Down":
-		bubble_ins.speedY = bubble_speed * ((velocity.y / SPEED) if velocity.x != 0 || velocity.y !=0 else 1)
-	else:
-		bubble_ins.speedY = -bubble_speed * ((-velocity.y / SPEED) if velocity.x != 0 || velocity.y !=0 else 1)
-		
 	bubble_ins.time_on_air = bubble_time
 	bubble_ins.position = position
-	get_parent().add_child(bubble_ins)
+	
+	if velocity.x != SPEED || velocity.y != SPEED:
+		velocidadActualX = velocity.x
+		velocidadActualY = velocity.y
+		
+	if sprite_direction == "Right":
+		bubble_ins.speedX = bubble_speed * ((velocity.x / velocidadActualX) if velocity.x != 0 || velocity.y !=0 else 1)
+		get_parent().add_child(bubble_ins)
+	else: 
+		if sprite_direction == "Left":
+			bubble_ins.speedX = -bubble_speed * ((velocity.x / velocidadActualX) if velocity.x != 0 || velocity.y !=0 else 1)
+			get_parent().add_child(bubble_ins)
+		else: 
+			if sprite_direction == "Down":
+				bubble_ins.speedY = bubble_speed * ((velocity.y / velocidadActualY) if velocity.x != 0 || velocity.y !=0 else 1)
+				get_parent().add_child(bubble_ins)
+			else:
+				if sprite_direction == "Up":
+					bubble_ins.speedY = -bubble_speed * ((velocity.y / velocidadActualY) if velocity.x != 0 || velocity.y !=0 else 1)
+					get_parent().add_child(bubble_ins)
+		
+	

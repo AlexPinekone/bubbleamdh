@@ -14,8 +14,11 @@ func _ready() -> void:
 	timer.wait_time = time_on_air
 
 func _physics_process(delta):
-	position.x += speedX
+	#if position.x == 0:
 	position.y += speedY
+	#else:
+	position.x += speedX
+	
 	
 	
 func _on_body_entered(body: Node2D) -> void:
