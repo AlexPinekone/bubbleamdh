@@ -107,7 +107,6 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 func enemy_attack():
 	if vulnerable and player_in_enemy:
 		health -= 20
-		print(health)
 		HealthB.value = health
 		vulnerable = false
 		$iframes.start()

@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcyx00g07u84j"]
+
+[ext_resource type="Script" path="res://Nodos/Personajes/enemy_mid.gd" id="1_76fc6"]
+[ext_resource type="Texture2D" uid="uid://dc1l45by2sfq7" path="res://Recursos/prod/bacteria 2.png" id="2_71dia"]
+[ext_resource type="Texture2D" uid="uid://dlyllmsak2s1j" path="res://Recursos/SpritesEscenario/TX Player.png" id="2_xj4re"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na6kb"]
+atlas = ExtResource("2_xj4re")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7eyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na6kb")
+}],
+"loop": true,
+"name": &"walkBack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_71dia")
+}],
+"loop": true,
+"name": &"walkDown",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walkSide",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b8xmp"]
+radius = 892.296
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06ays"]
+size = Vector2(31, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6pm8"]
+size = Vector2(31, 31.5)
+
+[node name="enemyMid" type="CharacterBody2D"]
+script = ExtResource("1_76fc6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j7eyw")
+animation = &"walkDown"
+offset = Vector2(0, -15)
+
+[node name="detection_Area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_Area"]
+shape = SubResource("CircleShape2D_b8xmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -15)
+shape = SubResource("RectangleShape2D_06ays")
+
+[node name="enemy_hitbox" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+position = Vector2(-0.5, -14.75)
+shape = SubResource("RectangleShape2D_w6pm8")
+
+[connection signal="body_entered" from="detection_Area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="detection_Area" to="CollisionShape2D" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_Area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_exited" from="detection_Area" to="CollisionShape2D" method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
