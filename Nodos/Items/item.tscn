@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cspq1cu4ki5jp"]
 
 [ext_resource type="Script" path="res://Nodos/Items/item.gd" id="1_52ls2"]
-[ext_resource type="Texture2D" uid="uid://yrjqa68huahs" path="res://Recursos/SpritesEscenario/bottle.png" id="2_8ak3x"]
+[ext_resource type="Texture2D" uid="uid://bvupve5apfygx" path="res://Recursos/prod/panol.png" id="2_lk6a1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2bw3"]
 radius = 14.0
@@ -11,7 +11,7 @@ gravity_scale = 0.0
 script = ExtResource("1_52ls2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_8ak3x")
+texture = ExtResource("2_lk6a1")
 
 [node name="takeArea" type="Area2D" parent="."]
 

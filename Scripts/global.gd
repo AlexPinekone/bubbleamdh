@@ -14,5 +14,7 @@ var generated_enemy = 0
 
 var allItems = [
 	"res://Nodos/Items/item.tscn",
-	"res://Nodos/Items/item01.tscn"
+	"res://Nodos/Items/item01.tscn",
+	"res://Nodos/Items/item02.tscn",
+	"res://Nodos/Items/item03.tscn"
 ]

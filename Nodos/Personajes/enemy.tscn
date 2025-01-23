@@ -1,15 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://by7kc25k3qxxj"]
+[gd_scene load_steps=10 format=3 uid="uid://by7kc25k3qxxj"]
 
 [ext_resource type="Script" path="res://Nodos/Personajes/enemy.gd" id="1_6ftgj"]
 [ext_resource type="Texture2D" uid="uid://dlyllmsak2s1j" path="res://Recursos/SpritesEscenario/TX Player.png" id="1_rn33v"]
+[ext_resource type="Texture2D" uid="uid://c5p28f5mhwfr8" path="res://Recursos/prod/bacteria.png" id="3_3kcso"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_na6kb"]
 atlas = ExtResource("1_rn33v")
 region = Rect2(32, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n8iq2"]
-atlas = ExtResource("1_rn33v")
-region = Rect2(0, 0, 32, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyxql"]
+atlas = ExtResource("3_3kcso")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j7eyw"]
 animations = [{
@@ -23,7 +24,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n8iq2")
+"texture": SubResource("AtlasTexture_kyxql")
 }],
 "loop": true,
 "name": &"walkDown",
@@ -39,10 +40,10 @@ animations = [{
 radius = 892.296
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06ays"]
-size = Vector2(19, 13)
+size = Vector2(8.5, 6.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6pm8"]
-size = Vector2(19, 42)
+size = Vector2(32, 31)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_6ftgj")
@@ -60,7 +61,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_b8xmp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 3.5)
+position = Vector2(-1, -15)
 shape = SubResource("RectangleShape2D_06ays")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
@@ -68,7 +69,7 @@ collision_layer = 6
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
-position = Vector2(0.5, -11)
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_w6pm8")
 
 [connection signal="body_entered" from="detection_Area" to="." method="_on_detection_area_body_entered"]

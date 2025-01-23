@@ -12,7 +12,7 @@ var SPEED = 140
 var bubble_speed = 6
 var bubble_time = 0.5
 
-var cadencia = 0.5
+var cadencia = 0.4
 var attBlock = false
 
 var input_direction: get = _get_input_direction

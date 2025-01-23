@@ -10,7 +10,13 @@ func _process(delta: float) -> void:
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
 		var ran1= rng.randi_range(0,Global.allItems.size()-1)
+		rng.randomize()
 		var ran2= rng.randi_range(0,Global.allItems.size()-1)
+		
+		while(ran1 == ran2):
+			rng.randomize()
+			ran2 = rng.randi_range(0,Global.allItems.size()-1)
+		
 		
 		var item1 = load(Global.allItems[ran1])
 		var item2 = load(Global.allItems[ran2])
@@ -18,7 +24,7 @@ func _process(delta: float) -> void:
 		var ite1 = item1.instantiate()
 		ite1.position = Vector2(180, 0)
 		
-		var ite2 = item1.instantiate()
+		var ite2 = item2.instantiate()
 		ite2.position = Vector2(-180, 0)
 		
 		add_child(ite1)

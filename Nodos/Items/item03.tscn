@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://sj85gbr706fl"]
+[gd_scene load_steps=4 format=3 uid="uid://d1xd3x0w5qwxl"]
 
-[ext_resource type="Script" path="res://Nodos/Items/item01.gd" id="1_biija"]
-[ext_resource type="Texture2D" uid="uid://c17ul6hqnb4s3" path="res://Recursos/prod/MrFuerte.png" id="2_44xmn"]
+[ext_resource type="Script" path="res://Nodos/Items/item01.gd" id="1_vx54m"]
+[ext_resource type="Texture2D" uid="uid://co37myekm8dmt" path="res://Recursos/prod/GansoPurific.png" id="2_utkrl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2bw3"]
 radius = 14.0
 
 [node name="Item" type="RigidBody2D"]
 gravity_scale = 0.0
-script = ExtResource("1_biija")
+script = ExtResource("1_vx54m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_44xmn")
+texture = ExtResource("2_utkrl")
 
 [node name="takeArea" type="Area2D" parent="."]
 
