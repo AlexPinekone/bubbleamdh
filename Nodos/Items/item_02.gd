@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var nameI = "Faboloso"
+var nameI = "Foboloso"
 
 func _on_take_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
