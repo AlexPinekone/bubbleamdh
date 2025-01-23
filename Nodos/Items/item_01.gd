@@ -10,4 +10,5 @@ func _on_take_area_body_entered(body: Node2D) -> void:
 		
 		body.SPEED = 70
 		body.cadencia = 0.1
+		
 		self.queue_free()

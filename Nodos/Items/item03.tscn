@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1xd3x0w5qwxl"]
 
-[ext_resource type="Script" path="res://Nodos/Items/item01.gd" id="1_vx54m"]
+[ext_resource type="Script" path="res://Nodos/Items/item_03.gd" id="1_wxknq"]
 [ext_resource type="Texture2D" uid="uid://co37myekm8dmt" path="res://Recursos/prod/GansoPurific.png" id="2_utkrl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2bw3"]
@@ -8,7 +8,7 @@ radius = 14.0
 
 [node name="Item" type="RigidBody2D"]
 gravity_scale = 0.0
-script = ExtResource("1_vx54m")
+script = ExtResource("1_wxknq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_utkrl")

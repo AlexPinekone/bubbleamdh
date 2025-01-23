@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var nameI = "GanzoPurific"
+var nameI = "Faboloso"
 
 func _on_take_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
@@ -8,6 +8,6 @@ func _on_take_area_body_entered(body: Node2D) -> void:
 		Global.generated_enemy = 0
 		Global.cantWave += 1
 		
-		body.SPEED = 70
-		body.cadencia = 0.1
+		body.damage = 100
+		
 		self.queue_free()
