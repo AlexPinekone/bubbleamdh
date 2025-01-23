@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
+@onready var HealthB = $'../Health'
 var bubble = preload("res://Nodos/bubble.tscn")
 
+var max_health = 100
 var health = 100
 var player_alive = true
 var player_in_enemy = false
@@ -106,6 +108,7 @@ func enemy_attack():
 	if vulnerable and player_in_enemy:
 		health -= 20
 		print(health)
+		HealthB.value = health
 		vulnerable = false
 		$iframes.start()
 	

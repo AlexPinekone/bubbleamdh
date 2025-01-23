@@ -9,6 +9,11 @@ func _on_timer_timeout() -> void:
 	if (Global.generated_enemy%Global.cantWave != 0 || Global.generated_enemy == 0):
 		generate_enemy()
 		Global.generated_enemy += 1
+		
+func _process(delta: float) -> void:
+	match Global.cantWave:
+		6:
+			$Timer.wait_time = 1.5
 	
 func generate_enemy():
 	var rng = RandomNumberGenerator.new()

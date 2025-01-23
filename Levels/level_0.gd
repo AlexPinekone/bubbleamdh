@@ -4,11 +4,21 @@ extends Node2D
 var paused = false
 var bandera = false
 
+func _ready() -> void:
+	$Base/Health.max_value = $Base/Player.max_health
+	$Base/Health.value = $Base/Player.health
+
 func _process(delta: float) -> void:
 	if bandera:
 		$Base/TextEdit.text = "Points: " + str(Global.points)
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
+		
+	$Base/Health.max_value = $Base/Player.max_health
+	if $Base/Player.health <= 0:
+		Global.resetVar()
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().change_scene_to_file("res://Levels/game_over.tscn")
 
 func _on_timer_timeout() -> void:
 	$Base/TextEdit.text = "Points: " + str(Global.points)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtvg6twwdqd6f"]
+[gd_scene load_steps=12 format=3 uid="uid://dtvg6twwdqd6f"]
 
 [ext_resource type="Script" path="res://Levels/level_0.gd" id="1_4mlx6"]
 [ext_resource type="Texture2D" uid="uid://csf5k0s5qn6ci" path="res://Recursos/SpritesEscenario/TX Tileset Grass.png" id="1_a24h2"]
@@ -83,6 +83,12 @@ physics_layer_0/collision_layer = 128
 physics_layer_0/collision_mask = 128
 sources/1 = SubResource("TileSetAtlasSource_sworm")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3gy3"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4aqqb"]
+bg_color = Color(0.814041, 0, 0.2061, 1)
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(1, 0)
 script = ExtResource("1_4mlx6")
@@ -107,6 +113,15 @@ offset_right = -78.0
 offset_bottom = -97.0
 text = "Move with the Arrows
 Blow a Bubble with Space"
+
+[node name="Health" type="ProgressBar" parent="Base"]
+offset_left = -286.0
+offset_top = -93.0
+offset_right = -158.0
+offset_bottom = -66.0
+theme_override_styles/background = SubResource("StyleBoxFlat_d3gy3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4aqqb")
+show_percentage = false
 
 [node name="Spawn" type="Node" parent="."]
 

@@ -18,3 +18,9 @@ var allItems = [
 	"res://Nodos/Items/item02.tscn",
 	"res://Nodos/Items/item03.tscn"
 ]
+
+func resetVar():
+	pointsLevel = 0
+	cantWave = 5
+	points = 0
+	generated_enemy = 0
