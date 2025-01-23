@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtvg6twwdqd6f"]
+[gd_scene load_steps=10 format=3 uid="uid://dtvg6twwdqd6f"]
 
 [ext_resource type="Script" path="res://Levels/level_0.gd" id="1_4mlx6"]
 [ext_resource type="Texture2D" uid="uid://csf5k0s5qn6ci" path="res://Recursos/SpritesEscenario/TX Tileset Grass.png" id="1_a24h2"]
+[ext_resource type="PackedScene" uid="uid://dctydy35hstc3" path="res://Levels/pause_menu.tscn" id="2_v18qt"]
 [ext_resource type="PackedScene" uid="uid://b8u2xifpvyg75" path="res://Nodos/Jugador/player.tscn" id="2_yc58d"]
 [ext_resource type="PackedScene" uid="uid://bccfwagnu46qj" path="res://Nodos/spawner.tscn" id="4_f1oi7"]
 [ext_resource type="Script" path="res://Scripts/item_handler.gd" id="5_fjwv1"]
@@ -83,6 +84,7 @@ physics_layer_0/collision_mask = 128
 sources/1 = SubResource("TileSetAtlasSource_sworm")
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(1, 0)
 script = ExtResource("1_4mlx6")
 
 [node name="Base" type="Node" parent="."]
@@ -135,6 +137,17 @@ script = ExtResource("6_62yvd")
 
 [node name="timerItemName" type="Timer" parent="Items"]
 wait_time = 3.0
+
+[node name="Pause" type="Node" parent="."]
+process_mode = 2
+
+[node name="PauseMenu" parent="Pause" instance=ExtResource("2_v18qt")]
+visible = false
+offset_left = -56.0
+offset_top = -49.0
+offset_right = -56.0
+offset_bottom = -49.0
+scale = Vector2(1.5, 1.5)
 
 [connection signal="timeout" from="Spawn/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Items/timerItemName" to="Items/ItemName" method="_on_timer_item_name_timeout"]
