@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://d0mda5ukegnt"
+path="res://.godot/imported/Oscura nieve.png-2c942b316f3e8b4a27e0cb1ce755a4b8.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Recursos/prod/Oscura nieve.png"
+dest_files=["res://.godot/imported/Oscura nieve.png-2c942b316f3e8b4a27e0cb1ce755a4b8.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

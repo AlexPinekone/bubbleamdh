@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtvg6twwdqd6f"]
+[gd_scene load_steps=14 format=3 uid="uid://dtvg6twwdqd6f"]
 
 [ext_resource type="Script" path="res://Levels/level_0.gd" id="1_4mlx6"]
 [ext_resource type="Texture2D" uid="uid://csf5k0s5qn6ci" path="res://Recursos/SpritesEscenario/TX Tileset Grass.png" id="1_a24h2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bccfwagnu46qj" path="res://Nodos/spawner.tscn" id="4_f1oi7"]
 [ext_resource type="Script" path="res://Scripts/item_handler.gd" id="5_fjwv1"]
 [ext_resource type="Script" path="res://Scripts/item_name.gd" id="6_62yvd"]
+[ext_resource type="Script" path="res://Scripts/pause_handler.gd" id="9_3u8pv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sworm"]
 texture = ExtResource("1_a24h2")
@@ -159,15 +160,23 @@ script = ExtResource("6_62yvd")
 wait_time = 3.0
 
 [node name="Pause" type="Node" parent="."]
-process_mode = 2
 
 [node name="PauseMenu" parent="Pause" instance=ExtResource("2_v18qt")]
+process_mode = 2
 visible = false
 offset_left = -56.0
 offset_top = -49.0
 offset_right = -56.0
 offset_bottom = -49.0
 scale = Vector2(1.5, 1.5)
+
+[node name="PauseHandler" type="Control" parent="Pause"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_3u8pv")
 
 [connection signal="timeout" from="Spawn/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Items/timerItemName" to="Items/ItemName" method="_on_timer_item_name_timeout"]

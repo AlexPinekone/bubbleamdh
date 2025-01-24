@@ -16,7 +16,12 @@ var allItems = [
 	"res://Nodos/Items/item.tscn",
 	"res://Nodos/Items/item01.tscn",
 	"res://Nodos/Items/item02.tscn",
-	"res://Nodos/Items/item03.tscn"
+	"res://Nodos/Items/item03.tscn",
+	"res://Nodos/Items/item04.tscn",
+	"res://Nodos/Items/item05.tscn",
+	"res://Nodos/Items/item06.tscn",
+	"res://Nodos/Items/item07.tscn",
+	"res://Nodos/Items/item08.tscn",
 ]
 
 func resetVar():

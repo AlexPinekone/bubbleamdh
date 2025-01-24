@@ -14,8 +14,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if bandera:
 		$Base/TextEdit.text = "Points: " + str(Global.points)
-	if Input.is_action_just_pressed("pause"):
-		pauseMenu()
 		
 	$Base/Health.max_value = $Base/Player.max_health
 	if $Base/Player.health <= 0:
@@ -37,8 +35,8 @@ func pauseMenu():
 		get_tree().paused = false
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_tree().paused = true
 		pause_menu.show()
+		get_tree().paused = true
 		
 	paused = !paused
 	

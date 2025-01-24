@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdlg7b8iwk6j8"]
+[gd_scene load_steps=4 format=3 uid="uid://cdlg7b8iwk6j8"]
 
-[ext_resource type="Texture2D" uid="uid://co37myekm8dmt" path="res://Recursos/prod/GansoPurific.png" id="2_3c62v"]
+[ext_resource type="Script" path="res://Nodos/Items/item_08.gd" id="1_7jdf4"]
+[ext_resource type="Texture2D" uid="uid://cwa3ataimktjq" path="res://Recursos/prod/Clarox.png" id="1_42rus"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2bw3"]
 radius = 14.0
 
 [node name="Item" type="RigidBody2D"]
 gravity_scale = 0.0
+script = ExtResource("1_7jdf4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_3c62v")
+texture = ExtResource("1_42rus")
 
 [node name="takeArea" type="Area2D" parent="."]
 
