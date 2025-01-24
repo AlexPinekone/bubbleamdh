@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var flash_animation: AnimationPlayer = $AnimatedSprite2D/FlashAnimation
 @onready var HealthB = $'../Health'
 var bubble = preload("res://Nodos/bubble.tscn")
 
@@ -37,7 +38,7 @@ func _physics_process(_delta):
 	enemy_attack();
 	if health <= 0:
 		player_alive = false
-	
+
 func set_animation(animation):
 	var direction = "Side" if sprite_direction in ["Left", "Right"] else sprite_direction
 	sprite.play(animation + direction)
@@ -107,6 +108,7 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 func enemy_attack():
 	if vulnerable and player_in_enemy:
 		health -= 20
+		flash_animation.play("flash") 
 		HealthB.value = health
 		vulnerable = false
 		$iframes.start()

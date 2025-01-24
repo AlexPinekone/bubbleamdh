@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var nameI = "Jabonzaso\nBubbles"
+var nameI = "Jabonzaso\nMore bubbles!"
 
 func _on_take_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):

@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-var SPEED = 110
+var SPEED = 50
 var player_chase = false
 var player: CharacterBody2D = null
 
-var health = 40
+var health = 120
 var enemy_in_attack = false
 
 

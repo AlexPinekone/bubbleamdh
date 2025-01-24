@@ -17,6 +17,9 @@ func _process(delta: float) -> void:
 		
 	$Base/Health.max_value = $Base/Player.max_health
 	if $Base/Player.health <= 0:
+		$Base/Player.sprite.play("dead")
+		$Base/Player.SPEED = 0
+		await get_tree().create_timer(0.5).timeout
 		back_music.stop()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene_to_file("res://Levels/game_over.tscn")

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var enemyN = preload("res://Nodos/Personajes/enemy.tscn")
 @onready var enemyM = preload("res://Nodos/Personajes/enemyMid.tscn")
-@onready var enemyB = preload("res://Nodos/Personajes/enemyMid.tscn")
+@onready var enemyB = preload("res://Nodos/Personajes/enemyBig.tscn")
 var cant_norm = 5
 var cant_mid = 0
 var cant_big = 0
@@ -26,10 +26,17 @@ func _process(delta: float) -> void:
 				$Timer.wait_time = 1.8
 				cant_norm = 3
 				cant_mid = Global.cantWave - cant_norm
-			_:
+			7:
 				solo = false
+				$Timer.wait_time = 1.6
 				cant_norm = 3
 				cant_mid = Global.cantWave - cant_norm
+			_:
+				solo = false
+				$Timer.wait_time = 1.2
+				cant_norm = 3
+				cant_mid = Global.cantWave - cant_norm - 2
+				cant_big = 2
 	
 	if Global.cantWave == Global.generated_enemy:
 		solo = true

@@ -1,15 +1,30 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8u2xifpvyg75"]
+[gd_scene load_steps=17 format=3 uid="uid://b8u2xifpvyg75"]
 
 [ext_resource type="Script" path="res://Nodos/Jugador/player.gd" id="1_hg857"]
+[ext_resource type="Shader" path="res://Nodos/Jugador/damage_flash.gdshader" id="2_dwj4d"]
 [ext_resource type="Texture2D" uid="uid://d3a2ieom4pb4r" path="res://Recursos/prod/Bub_sprite_front.png" id="2_pdx52"]
+[ext_resource type="Texture2D" uid="uid://du23faf0cyc8k" path="res://Recursos/prod/bubbles.png" id="2_yeivx"]
 [ext_resource type="Texture2D" uid="uid://b52l4rdb7d7w7" path="res://Recursos/prod/Bub_sprite_front_attack.png" id="3_lvf8y"]
 [ext_resource type="Texture2D" uid="uid://cs3dgueqkeujo" path="res://Recursos/prod/Bub_sprite_front_der.png" id="4_iup85"]
 [ext_resource type="Texture2D" uid="uid://b4hagdbba2hht" path="res://Recursos/prod/Bub_sprite_front_der_attack.png" id="5_2buj2"]
 [ext_resource type="Texture2D" uid="uid://ofrhfpm1qv64" path="res://Recursos/prod/Bub_sprite_back.png" id="6_fckuv"]
 [ext_resource type="Texture2D" uid="uid://ctrv53j5v4s44" path="res://Recursos/prod/Bub_sprite_back_attack.png" id="7_yxx71"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t4f8q"]
+shader = ExtResource("2_dwj4d")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_value = null
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mc14a"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yeivx")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_pdx52")
@@ -44,6 +59,42 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="Animation" id="Animation_gmxmn"]
+resource_name = "flash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [null, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gybfi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xrru5"]
+_data = {
+"RESET": SubResource("Animation_gybfi"),
+"flash": SubResource("Animation_gmxmn")
+}
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_x68w6"]
 radius = 8.06226
 
@@ -58,10 +109,15 @@ motion_mode = 1
 script = ExtResource("1_hg857")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_t4f8q")
 sprite_frames = SubResource("SpriteFrames_mc14a")
 animation = &"walkSide"
 autoplay = "walkDown"
-frame_progress = 0.174898
+
+[node name="FlashAnimation" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_xrru5")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
