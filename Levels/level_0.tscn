@@ -100,6 +100,7 @@ script = ExtResource("1_4mlx6")
 [node name="backMusic" type="AudioStreamPlayer2D" parent="Base"]
 stream = ExtResource("2_dvgdc")
 volume_db = -11.0
+parameters/looping = true
 
 [node name="TileMap" type="TileMap" parent="Base"]
 tile_set = SubResource("TileSet_ep8ia")

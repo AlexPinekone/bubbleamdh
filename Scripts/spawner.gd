@@ -34,35 +34,37 @@ func _process(delta: float) -> void:
 	if Global.cantWave == Global.generated_enemy:
 		solo = true
 func generate_enemy():
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-	var random = rng.randi_range(1,4)
-	
-	match random:
-		1:
-			position = Vector2(rng.randi_range(-330,330),230)
-		2:
-			position = Vector2(rng.randi_range(-330,330),-210)
-		3:
-			position = Vector2(330, rng.randi_range(-210,230))
-		4:
-			position = Vector2(-330, rng.randi_range(-210,230))
-	
-	if (cant_norm > 0):
-		print(cant_norm)
-		var ene = enemyN.instantiate()
-		ene.position = position
-		get_parent().get_node("EnemyHandler").add_child(ene)
-		cant_norm -= 1
-	else:
-		if (cant_mid > 0):
-			var ene = enemyM.instantiate()
+	if !Global.intermi:
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		var random = rng.randi_range(1,4)
+		
+		match random:
+			1:
+				position = Vector2(rng.randi_range(-330,330),230)
+			2:
+				position = Vector2(rng.randi_range(-330,330),-210)
+			3:
+				position = Vector2(330, rng.randi_range(-210,230))
+			4:
+				position = Vector2(-330, rng.randi_range(-210,230))
+				
+		print("Faltan en: ",(cant_norm+cant_mid))
+		
+		if (cant_norm > 0):
+			var ene = enemyN.instantiate()
 			ene.position = position
 			get_parent().get_node("EnemyHandler").add_child(ene)
-			cant_mid -= 1
+			cant_norm -= 1
 		else:
-			if (cant_big > 0):
-				var ene = enemyB.instantiate()
+			if (cant_mid > 0):
+				var ene = enemyM.instantiate()
 				ene.position = position
 				get_parent().get_node("EnemyHandler").add_child(ene)
-				cant_big -= 1
+				cant_mid -= 1
+			else:
+				if (cant_big > 0):
+					var ene = enemyB.instantiate()
+					ene.position = position
+					get_parent().get_node("EnemyHandler").add_child(ene)
+					cant_big -= 1

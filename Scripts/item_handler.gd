@@ -3,8 +3,9 @@ extends Node
 var just_one = true
 
 func _process(delta: float) -> void:
-	if (Global.pointsLevel % Global.cantWave == 0 and Global.points != 0 and just_one and Global.generated_enemy == Global.cantWave):
+	if (Global.intermi == false && Global.pointsLevel % Global.cantWave == 0 and Global.points != 0 and just_one and Global.generated_enemy == Global.cantWave):
 		just_one = false
+		Global.intermi = true
 		Global.pointsLevel = 0
 		
 		var rng = RandomNumberGenerator.new()

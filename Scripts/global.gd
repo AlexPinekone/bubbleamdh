@@ -2,7 +2,7 @@ extends Node
 
 var player_current_attack = false
 
-var intermission = false
+var intermi = false
 
 var cantWave = 5
 
