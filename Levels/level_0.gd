@@ -1,12 +1,15 @@
 extends Node2D
 
 @onready var pause_menu: Control = $Pause/PauseMenu
+@onready var back_music: AudioStreamPlayer2D = $Base/backMusic
+
 var paused = false
 var bandera = false
 
 func _ready() -> void:
 	$Base/Health.max_value = $Base/Player.max_health
 	$Base/Health.value = $Base/Player.health
+	back_music.play()
 
 func _process(delta: float) -> void:
 	if bandera:
@@ -16,6 +19,7 @@ func _process(delta: float) -> void:
 		
 	$Base/Health.max_value = $Base/Player.max_health
 	if $Base/Player.health <= 0:
+		back_music.stop()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene_to_file("res://Levels/game_over.tscn")
 		

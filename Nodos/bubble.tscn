@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://badnrydojlh08"]
+[gd_scene load_steps=5 format=3 uid="uid://badnrydojlh08"]
 
 [ext_resource type="Texture2D" uid="uid://kjirw5nwhh2f" path="res://Recursos/SpritesLagarto/Bubble.png" id="1_06ds6"]
 [ext_resource type="Script" path="res://Nodos/bubble.gd" id="1_rivin"]
+[ext_resource type="AudioStream" uid="uid://lbujqn88qvye" path="res://Recursos/audio/bubbleAudi.ogg" id="3_cm4do"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7eyrr"]
 radius = 8.0
@@ -22,6 +23,9 @@ shape = SubResource("CircleShape2D_7eyrr")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="bloop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cm4do")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

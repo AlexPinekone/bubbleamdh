@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtvg6twwdqd6f"]
+[gd_scene load_steps=13 format=3 uid="uid://dtvg6twwdqd6f"]
 
 [ext_resource type="Script" path="res://Levels/level_0.gd" id="1_4mlx6"]
 [ext_resource type="Texture2D" uid="uid://csf5k0s5qn6ci" path="res://Recursos/SpritesEscenario/TX Tileset Grass.png" id="1_a24h2"]
+[ext_resource type="AudioStream" uid="uid://07wsyt0rue40" path="res://Recursos/audio/azulSong8bits.ogg" id="2_dvgdc"]
 [ext_resource type="PackedScene" uid="uid://dctydy35hstc3" path="res://Levels/pause_menu.tscn" id="2_v18qt"]
 [ext_resource type="PackedScene" uid="uid://b8u2xifpvyg75" path="res://Nodos/Jugador/player.tscn" id="2_yc58d"]
 [ext_resource type="PackedScene" uid="uid://bccfwagnu46qj" path="res://Nodos/spawner.tscn" id="4_f1oi7"]
@@ -94,6 +95,10 @@ position = Vector2(1, 0)
 script = ExtResource("1_4mlx6")
 
 [node name="Base" type="Node" parent="."]
+
+[node name="backMusic" type="AudioStreamPlayer2D" parent="Base"]
+stream = ExtResource("2_dvgdc")
+volume_db = -11.0
 
 [node name="TileMap" type="TileMap" parent="Base"]
 tile_set = SubResource("TileSet_ep8ia")
