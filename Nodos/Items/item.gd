@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var nameI = "Panol"
+var nameI = "Panol\nRun!"
 
 func _on_take_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):

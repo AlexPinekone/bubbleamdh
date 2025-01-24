@@ -16,9 +16,9 @@ func _process(delta: float) -> void:
 		
 	$Base/Health.max_value = $Base/Player.max_health
 	if $Base/Player.health <= 0:
-		Global.resetVar()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene_to_file("res://Levels/game_over.tscn")
+		
 
 func _on_timer_timeout() -> void:
 	$Base/TextEdit.text = "Points: " + str(Global.points)

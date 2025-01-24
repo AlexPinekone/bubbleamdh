@@ -142,10 +142,10 @@ script = ExtResource("5_fjwv1")
 
 [node name="ItemName" type="TextEdit" parent="Items"]
 visible = false
-offset_left = 143.0
-offset_top = -147.0
-offset_right = 267.0
-offset_bottom = -113.0
+offset_left = 90.0
+offset_top = -161.0
+offset_right = 288.0
+offset_bottom = -96.0
 text = "Panol
 "
 script = ExtResource("6_62yvd")
