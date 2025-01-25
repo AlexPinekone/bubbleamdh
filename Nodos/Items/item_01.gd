@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var nameI = "MrFuerte\nShoot faster!"
+var nameI = "MrFuerte\nSlow but Shoot faster!"
 
 func _on_take_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
@@ -11,5 +11,6 @@ func _on_take_area_body_entered(body: Node2D) -> void:
 		
 		body.SPEED = body.SPEED - 60
 		body.cadencia = 0.1
+		body.bubble_speed += 3
 		
 		self.queue_free()

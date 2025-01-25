@@ -214,18 +214,6 @@ script = ExtResource("6_62yvd")
 [node name="timerItemName" type="Timer" parent="Items"]
 wait_time = 3.0
 
-[node name="Spawn" type="Node" parent="."]
-
-[node name="Timer" type="Timer" parent="Spawn"]
-wait_time = 2.0
-autostart = true
-
-[node name="EnemyHandler" type="Node2D" parent="Spawn"]
-position = Vector2(0, -7)
-
-[node name="Spawner" parent="Spawn" instance=ExtResource("4_f1oi7")]
-position = Vector2(270, 3)
-
 [node name="Base" type="Node" parent="."]
 
 [node name="backMusic" type="AudioStreamPlayer2D" parent="Base"]
@@ -256,23 +244,30 @@ theme_override_styles/background = SubResource("StyleBoxFlat_d3gy3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4aqqb")
 show_percentage = false
 
+[node name="Spawn" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="Spawn"]
+wait_time = 2.0
+autostart = true
+
+[node name="EnemyHandler" type="Node2D" parent="Spawn"]
+position = Vector2(0, -7)
+
+[node name="Spawner" parent="Spawn" instance=ExtResource("4_f1oi7")]
+position = Vector2(270, 3)
+
 [node name="Pause" type="Node" parent="."]
 
 [node name="PauseMenu" parent="Pause" instance=ExtResource("2_v18qt")]
 process_mode = 2
 visible = false
-anchors_preset = -1
-anchor_left = -0.245
-anchor_top = -0.246
-anchor_right = 0.249
-anchor_bottom = 0.239
-offset_left = 282.24
-offset_top = 159.408
-offset_right = -286.848
-offset_bottom = -154.872
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(0, -200)
 
 [node name="PauseHandler" type="Control" parent="Pause"]
 process_mode = 3

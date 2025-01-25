@@ -9,6 +9,6 @@ func _on_take_area_body_entered(body: Node2D) -> void:
 		Global.cantWave += 1
 		Global.intermi = false
 		
-		body.SPEED = 300
+		body.SPEED += 130
 		
 		self.queue_free()
