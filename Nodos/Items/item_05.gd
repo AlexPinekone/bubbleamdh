@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var nameI = "Laisol\nWhy does it hurts!?"
+var nameI = "Laisol\nDamage++"
 
 func _on_take_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):

@@ -15,9 +15,11 @@ gravity_scale = 0.0
 script = ExtResource("1_rivin")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.474853, 0.716359, 1)
 texture = ExtResource("1_06ds6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_7eyrr")
 
 [node name="Timer" type="Timer" parent="."]

@@ -12,15 +12,50 @@ grow_vertical = 2
 script = ExtResource("1_4x0kg")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.5
+offset_top = -147.5
+offset_right = 136.5
+offset_bottom = 147.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "Programming:
+
+Sprites: 
+
+Banner:
+
+Music: "
+
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "Cristian Castro - Azul [8-Bit Version]"
+uri = "https://youtu.be/x4h5OnrEDuk?si=H3DhsIiEbcIAqzL9"
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "
+"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
 layout_mode = 2
 text = "Return"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer3/VBoxContainer2/Back" to="." method="_on_back_pressed"]

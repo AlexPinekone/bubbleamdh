@@ -11,13 +11,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vcnt8")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1149.0
+offset_bottom = 644.0
+color = Color(0.192685, 0.30457, 0.474607, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 423.5
+offset_top = 100.0
+offset_right = 728.5
+offset_bottom = 231.0
+theme_override_colors/font_color = Color(0.378724, 0.698183, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.427583, 0.566649, 1, 1)
+theme_override_font_sizes/font_size = 46
+text = "Bubble Clean!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.5
+offset_right = 100.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
