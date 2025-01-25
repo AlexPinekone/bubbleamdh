@@ -34,7 +34,8 @@ text = "Highest Score: 0"
 
 [node name="Restart" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Restart"
+text = "Restart
+"
 
 [node name="Main menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
