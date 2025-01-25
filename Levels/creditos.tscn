@@ -11,51 +11,60 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4x0kg")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1157.0
+offset_bottom = 644.0
+color = Color(0.192157, 0.305882, 0.47451, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -136.5
-offset_top = -147.5
-offset_right = 136.5
-offset_bottom = 147.5
+offset_left = -139.0
+offset_top = -145.5
+offset_right = 134.0
+offset_bottom = 149.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer3"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer3"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer3/VBoxContainer2"]
 layout_mode = 2
 text = "Programming:
+Alex Pinekone
 
 Sprites: 
+Juan Pablo
 
 Banner:
 
+
 Music: "
 
-[node name="LinkButton" type="LinkButton" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+[node name="LinkButton" type="LinkButton" parent="ColorRect/MarginContainer/VBoxContainer3/VBoxContainer2"]
 layout_mode = 2
 text = "Cristian Castro - Azul [8-Bit Version]"
 uri = "https://youtu.be/x4h5OnrEDuk?si=H3DhsIiEbcIAqzL9"
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+[node name="Label3" type="Label" parent="ColorRect/MarginContainer/VBoxContainer3/VBoxContainer2"]
 layout_mode = 2
 
-[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+[node name="Label4" type="Label" parent="ColorRect/MarginContainer/VBoxContainer3/VBoxContainer2"]
 layout_mode = 2
 text = "
 "
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer3/VBoxContainer2"]
+[node name="Back" type="Button" parent="ColorRect/MarginContainer/VBoxContainer3/VBoxContainer2"]
 layout_mode = 2
 text = "Return"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer3/VBoxContainer2/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer3/VBoxContainer2/Back" to="." method="_on_back_pressed"]

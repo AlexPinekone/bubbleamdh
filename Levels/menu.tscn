@@ -12,36 +12,48 @@ grow_vertical = 2
 script = ExtResource("1_vcnt8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1149.0
-offset_bottom = 644.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.003
+anchor_right = 0.999
+anchor_bottom = 0.997
+offset_left = 0.348
+offset_top = 0.056
+offset_right = -0.348145
+offset_bottom = -0.0560303
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.192685, 0.30457, 0.474607, 1)
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 2
-offset_left = 423.5
-offset_top = 100.0
-offset_right = 728.5
-offset_bottom = 231.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -152.5
+offset_right = 152.5
+offset_bottom = 64.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0.378724, 0.698183, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.427583, 0.566649, 1, 1)
 theme_override_font_sizes/font_size = 46
-text = "Bubble Clean!
+text = "
+
+Bubble Clean!
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -50.5
-offset_right = 100.0
-offset_bottom = 50.5
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 476.0
+offset_top = 273.5
+offset_right = -476.0
+offset_bottom = -273.5
 grow_horizontal = 2
 grow_vertical = 2
 
