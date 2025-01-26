@@ -1,6 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7rb1ea2h36ns"]
+[gd_scene load_steps=11 format=3 uid="uid://c7rb1ea2h36ns"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_vcnt8"]
+[ext_resource type="Texture2D" uid="uid://bvy4tukp4j26c" path="res://img/Menu.png" id="2_6ul5x"]
+[ext_resource type="Texture2D" uid="uid://dapkf8hbbmc0g" path="res://img/burBoton.png" id="3_r3qom"]
+[ext_resource type="Texture2D" uid="uid://bfpedbddfmc6i" path="res://img/burBotonHov.png" id="4_f6rsx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bn4rw"]
+texture = ExtResource("4_f6rsx")
+expand_margin_top = 40.0
+expand_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hsplt"]
+texture = ExtResource("3_r3qom")
+expand_margin_top = 40.0
+expand_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pi4s1"]
+texture = ExtResource("4_f6rsx")
+expand_margin_top = 40.0
+expand_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_td0vg"]
+texture = ExtResource("3_r3qom")
+expand_margin_top = 40.0
+expand_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5r8g"]
+texture = ExtResource("4_f6rsx")
+expand_margin_top = 40.0
+expand_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6l6ne"]
+texture = ExtResource("3_r3qom")
+expand_margin_top = 40.0
+expand_margin_bottom = 40.0
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -26,51 +59,51 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.192685, 0.30457, 0.474607, 1)
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -152.5
-offset_right = 152.5
-offset_bottom = 64.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.378724, 0.698183, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.427583, 0.566649, 1, 1)
-theme_override_font_sizes/font_size = 46
-text = "
-
-Bubble Clean!
-"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(574, 324)
+scale = Vector2(1.4575, 1.13)
+texture = ExtResource("2_6ul5x")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 476.0
-offset_top = 273.5
-offset_right = -476.0
-offset_bottom = -273.5
+offset_left = 461.878
+offset_top = 321.906
+offset_right = -461.122
+offset_bottom = -77.0941
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(113, 48)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 71
 alignment = 1
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.613863, 0.45221, 0.602823, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxTexture_bn4rw")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hsplt")
 text = "Play"
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.615686, 0.45098, 0.603922, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxTexture_pi4s1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_td0vg")
 text = "Credits"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.615686, 0.45098, 0.603922, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxTexture_a5r8g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6l6ne")
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
